@@ -37,6 +37,11 @@ public class DeptController
 	@RequestMapping(value = "/dept/list", method = RequestMethod.GET)
 	public List<Dept> list()
 	{
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return service.list();
 	}
 
