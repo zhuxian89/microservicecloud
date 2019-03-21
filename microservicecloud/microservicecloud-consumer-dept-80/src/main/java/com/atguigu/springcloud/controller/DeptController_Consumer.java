@@ -1,5 +1,6 @@
 package com.atguigu.springcloud.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.atguigu.springcloud.entities.Dept;
+import rx.Observable;
+import rx.Observer;
 
 @RestController
 public class DeptController_Consumer
@@ -42,6 +45,14 @@ public class DeptController_Consumer
 	{
 		return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
 	}
+
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/consumer/dept/list2")
+	public List<Dept> list2()
+	{
+		return  restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
+	}
+
 
 	// 测试@EnableDiscoveryClient,消费端可以调用服务发现
 	@RequestMapping(value = "/consumer/dept/discovery")
