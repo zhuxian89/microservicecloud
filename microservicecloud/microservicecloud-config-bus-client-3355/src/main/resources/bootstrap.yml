@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      name: didispace #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: zhw   #本次访问的配置项
+      label: master   
+      uri: http://localhost:3344 #本微服务启动后先去找3344号服务，通过SpringCloudConfig获取GitHub的服务地址
+      fail-fast: true
+      #discovery:
+        #enabled: true
+        #service-id: microservicecloud-config-center-bus
+
+
+
+ 

@@ -1,0 +1,21 @@
+server:
+  port: 1000
+
+
+spring:
+  application:
+    name: spring-cloud-stream
+  kafka:
+    bootstrap-servers: localhost:9092
+  cloud:
+    stream:
+      bindings:
+        gupao:
+          destination: ${kafka.topic1}
+
+## 配置需要的kafka 主题
+kafka:
+  topic1: gupao
+
+
+
