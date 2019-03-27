@@ -10,10 +10,6 @@ ribbon:
   ReadTimeout: 120000
   ConnectTimeout: 30000
 
-microservicecloud-dept:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
-
 
 eureka:
   client:
